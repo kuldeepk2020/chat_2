@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: chat_2
+    env: python
+    build:
+      python_version: 3.11
+      install_commands:
+        - pip install -r requirements.txt
+        - python -m spacy download en_core_web_sm
+    start_command: streamlit run chat_app.py
+    build_command: |
+      pip install -r requirements.txt
+      python -m spacy download en_core_web_sm
+
+
+
+
